@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 12, 2019 11:35:54 AM by Hibernate Tools 5.1.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="inventory_management" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Category" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="category">
+    <class catalog="inventory_management" dynamic-insert="false" dynamic-update="false" mutable="true" name="inventory.model.Category" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="category">
         <id name="id" type="java.lang.Integer">
             <column name="ID"/>
             <generator class="identity"/>
@@ -28,7 +28,7 @@
             <key on-delete="noaction">
                 <column name="CATE_ID" not-null="true"/>
             </key>
-            <one-to-many class="model.ProductInfo" embed-xml="true" not-found="exception"/>
+            <one-to-many class="inventory.model.ProductInfo" embed-xml="true" not-found="exception"/>
         </set>
     </class>
 </hibernate-mapping>

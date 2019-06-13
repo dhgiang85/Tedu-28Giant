@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated Jun 12, 2019 11:35:54 AM by Hibernate Tools 5.1.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="inventory_management" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.ProductInfo" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="product_info">
+    <class catalog="inventory_management" dynamic-insert="false" dynamic-update="false" mutable="true" name="inventory.model.ProductInfo" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="product_info">
         <id name="id" type="java.lang.Integer">
             <column name="ID"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="model.Category" embed-xml="true" fetch="select" insert="true" name="category" not-found="exception" optimistic-lock="true" unique="false" update="true">
+        <many-to-one class="inventory.model.Category" embed-xml="true" fetch="select" insert="true" name="category" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="CATE_ID" not-null="true"/>
         </many-to-one>
         <property generated="never" lazy="false" name="code" optimistic-lock="true" type="string" unique="false">
@@ -34,19 +34,19 @@
             <key on-delete="noaction">
                 <column name="PRODUCT_ID" not-null="true"/>
             </key>
-            <one-to-many class="model.History" embed-xml="true" not-found="exception"/>
+            <one-to-many class="inventory.model.History" embed-xml="true" not-found="exception"/>
         </set>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="productInStocks" optimistic-lock="true" sort="unsorted" table="product_in_stock">
             <key on-delete="noaction">
                 <column name="PRODUCT_ID" not-null="true"/>
             </key>
-            <one-to-many class="model.ProductInStock" embed-xml="true" not-found="exception"/>
+            <one-to-many class="inventory.model.ProductInStock" embed-xml="true" not-found="exception"/>
         </set>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="invoices" optimistic-lock="true" sort="unsorted" table="invoice">
             <key on-delete="noaction">
                 <column name="PRODUCT_ID" not-null="true"/>
             </key>
-            <one-to-many class="model.Invoice" embed-xml="true" not-found="exception"/>
+            <one-to-many class="inventory.model.Invoice" embed-xml="true" not-found="exception"/>
         </set>
     </class>
 </hibernate-mapping>
