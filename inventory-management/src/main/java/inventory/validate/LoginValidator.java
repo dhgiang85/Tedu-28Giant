@@ -13,7 +13,7 @@ import inventory.model.User;
 import inventory.service.UserService;
 
 @Component
-public class LoginValidate implements Validator {
+public class LoginValidator implements Validator {
 
 	@Autowired
 	private UserService userService;

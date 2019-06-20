@@ -10,8 +10,8 @@ import inventory.model.User;
 import inventory.dao.UserDAO;
 @Service
 public class UserService {
-	@Autowired
 	final static Logger log = Logger.getLogger(UserService.class);
+	@Autowired
 	private UserDAO<User> userDAO;
 	public List<User> findByProperty(String property , Object value) {
 		log.info("Find user by property start ");
