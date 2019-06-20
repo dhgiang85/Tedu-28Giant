@@ -3,6 +3,7 @@ package inventory.model;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Set;
 public class Menu implements java.io.Serializable {
 
 	private Integer id;
-	private int parrentId;
+	private int parentId;
 	private String url;
 	private String name;
 	private int orderIndex;
@@ -19,13 +20,14 @@ public class Menu implements java.io.Serializable {
 	private Date createDate;
 	private Date updateDate;
 	private Set auths = new HashSet(0);
-
+	private List<Menu> child;
+	private String idMenu;
 	public Menu() {
 	}
 
-	public Menu(int parrentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
+	public Menu(int parentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
 			Date updateDate) {
-		this.parrentId = parrentId;
+		this.parentId = parentId;
 		this.url = url;
 		this.name = name;
 		this.orderIndex = orderIndex;
@@ -34,9 +36,9 @@ public class Menu implements java.io.Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public Menu(int parrentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
+	public Menu(int parentId, String url, String name, int orderIndex, int activeFlag, Date createDate,
 			Date updateDate, Set auths) {
-		this.parrentId = parrentId;
+		this.parentId = parentId;
 		this.url = url;
 		this.name = name;
 		this.orderIndex = orderIndex;
@@ -54,12 +56,12 @@ public class Menu implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public int getParrentId() {
-		return this.parrentId;
+	public int getParentId() {
+		return this.parentId;
 	}
 
-	public void setParrentId(int parrentId) {
-		this.parrentId = parrentId;
+	public void setParentId(int parentId) {
+		this.parentId = parentId;
 	}
 
 	public String getUrl() {
@@ -118,4 +120,21 @@ public class Menu implements java.io.Serializable {
 		this.auths = auths;
 	}
 
+	public List<Menu> getChild() {
+		return child;
+	}
+
+	public void setChild(List<Menu> child) {
+		this.child = child;
+	}
+
+	public String getIdMenu() {
+		return idMenu;
+	}
+
+	public void setIdMenu(String idMenu) {
+		this.idMenu = idMenu;
+	}
+	
+	
 }

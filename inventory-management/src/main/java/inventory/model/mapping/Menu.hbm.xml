@@ -6,8 +6,8 @@
             <column name="ID"/>
             <generator class="identity"/>
         </id>
-        <property generated="never" lazy="false" name="parrentId" optimistic-lock="true" type="int" unique="false">
-            <column name="PARRENT_ID" not-null="true"/>
+        <property generated="never" lazy="false" name="parentId" optimistic-lock="true" type="int" unique="false">
+            <column name="PARENT_ID" not-null="true"/>
         </property>
         <property generated="never" lazy="false" name="url" optimistic-lock="true" type="string" unique="false">
             <column length="100" name="URL" not-null="true"/>
