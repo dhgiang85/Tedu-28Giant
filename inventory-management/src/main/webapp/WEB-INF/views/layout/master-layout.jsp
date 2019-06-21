@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%> 
-<%@taglib prefix="ties" uri="http://tiles.apache.org/tags-tiles" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,6 +24,8 @@
 
     <!-- Custom Theme Style -->
     <link href="<c:url value="/resources/build/css/custom.min.css"/>" rel="stylesheet">
+      <!-- jQuery -->
+    <script src="<c:url value="/resources/vendors/jquery/dist/jquery.min.js"/>"></script>
   </head>
 
   <body class="nav-md footer_fixed">
@@ -32,7 +34,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Inventory MCST</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Inventory Management!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -40,7 +42,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<c:url value="/resources/images/user.png"/>" alt="..." class="img-circle profile_img">
+                <img src="<c:url value="/resources/images/user.png" />"alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -52,7 +54,7 @@
             <br />
 
             <!-- sidebar menu -->
-   			<ties:insertAttribute name="sidebar"></ties:insertAttribute>
+           	<tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
@@ -66,7 +68,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<c:url value="/logout"/>">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<c:url value='/logout'/>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -75,19 +77,20 @@
         </div>
 
         <!-- top navigation -->
-      	<ties:insertAttribute name="top-nav"></ties:insertAttribute>
+        <tiles:insertAttribute name="top-nav"></tiles:insertAttribute>
         <!-- /top navigation -->
 
         <!-- page content -->
- 		<ties:insertAttribute name="body"></ties:insertAttribute>
+        <tiles:insertAttribute name="body"></tiles:insertAttribute>
         <!-- /page content -->
-		<ties:insertAttribute name="footer"></ties:insertAttribute>
-        <!-- footer content -->
 
+        <!-- footer content -->
+        <tiles:insertAttribute name="footer"></tiles:insertAttribute>
+        <!-- /footer content -->
+      </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="<c:url value="/resources/vendors/jquery/dist/jquery.min.js"/>"></script>
+  
     <!-- Bootstrap -->
     <script src="<c:url value="/resources/vendors/bootstrap/dist/js/bootstrap.min.js"/>"></script>
     <!-- FastClick -->
